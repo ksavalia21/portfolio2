@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #F5F5F5;
+  --cream-dark: #E5E5E5;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+.text-cream {
+  color: var(--cream);
+}
+
+.bg-cream {
+  background-color: var(--cream);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cream);
+  border-radius: 4px;
+  opacity: 0.3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cream-dark);
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Allow scrolling in project details modal while keeping main pages non-scrollable */
+.modal-scrollable {
+  overflow-y: auto;
+  height: 100vh;
+  padding-top: 80px; /* More space for the navbar */
+}
+
+/* Better responsive image handling */
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive padding for mobile */
+@media (max-width: 640px) {
+  .min-h-screen {
+    padding-top: 70px;
+  }
+  
+  .modal-scrollable {
+    padding-top: 100px;
+  }
+}
