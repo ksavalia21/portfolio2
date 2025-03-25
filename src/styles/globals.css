@@ -12,6 +12,12 @@ html, body {
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  html, body {
+    overflow: auto;
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -22,6 +28,12 @@ body {
   background-color: #000000;
   color: var(--cream);
   overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
 }
 
 .text-cream {
@@ -60,7 +72,7 @@ body {
 .modal-scrollable {
   overflow-y: auto;
   height: 100vh;
-  padding-top: 80px; /* More space for the navbar */
+  padding-top: 20px; /* More space for the navbar */
 }
 
 /* Better responsive image handling */
@@ -76,6 +88,6 @@ body {
   }
   
   .modal-scrollable {
-    padding-top: 100px;
+    padding-top: 20px;
   }
 }

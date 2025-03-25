@@ -28,9 +28,26 @@ function App() {
     }, 2000);
     
     // Disable scrolling
-    document.body.style.overflow = 'hidden';
+    const isMobile = window.innerHeight <= 768;
+    if (!isMobile) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
     return () => {
       document.body.style.overflow = 'auto';
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth <= 768;
+      document.body.style.overflow = isMobile ? 'auto' : 'hidden';
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -152,7 +169,7 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="container mx-auto px-4 py-8 h-screen overflow-hidden relative z-10"
+              className="container mx-auto px-4 py-8 h-screen md:overflow-hidden overflow-auto relative z-10"
             >
               {renderSection()}
             </motion.div>

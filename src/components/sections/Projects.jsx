@@ -237,15 +237,15 @@ const Projects = () => {
             className="fixed inset-0 bg-black/90 z-[90] overflow-hidden"
             onClick={() => setSelectedProject(null)}
           >
-            <div className="absolute inset-0 overflow-y-auto modal-scrollable pt-16" onClick={(e) => e.stopPropagation()}>
+            <div className="absolute inset-0 pt-16 overflow-y-auto modal-scrollable" onClick={(e) => e.stopPropagation()}>
               <motion.div
                 ref={modalRef}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                className="max-w-5xl mx-auto my-20 px-4 py-8"
+                className="max-w-5xl mx-auto px-4 py-6"
               >
-                <div className="sticky top-16 z-30 flex justify-between items-center mb-8 pt-4 pb-4 bg-black/90 backdrop-blur-sm border-b border-cream/10">
+                <div className="sticky top-0 z-30 flex justify-between items-center mb-8 pt-4 pb-4 bg-black/90 backdrop-blur-sm border-b border-cream/10 w-full">
                   <button
                     onClick={() => setSelectedProject(null)}
                     className="text-cream hover:text-cream/80 flex items-center"
